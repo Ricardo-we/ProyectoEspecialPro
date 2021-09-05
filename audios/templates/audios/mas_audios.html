@@ -1,0 +1,35 @@
+{% extends 'ProyectoEspecialApp/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'ProyectoEspecialApp/css/audios.css'%}">
+    <link rel="stylesheet" href="{% static 'ProyectoEspecialApp/css/cartas.css' %}">
+    
+    <h1 class="audios_title">AUDIOS</h1>
+    <section class="audioContainer">
+        {{ audios_|safe }}   
+
+        {% if audios|length >= index_|add:1 %}
+            <a href="{% url 'Mas_audios' index_ %}" class="next"> >> </a>
+        {% else %}
+
+        {% endif %}
+
+        {% if index_ > max_audios and index_ < max_audios|add:max_audios %}
+            <a href="{% url 'Audios' %}" class="back"><<</a>
+        {% elif last_index == 0 %}
+            <a href="{% url 'Audios' %}" class="back"><<</a>
+        {% else %}
+            <a href="{% url 'Mas_audios' last_index %}" class="back"><<</a>
+        {% endif %}
+    </section>
+
+    <div class="containerLinksMoreMedia">
+        <div class="linkMedia"><a href="{% url 'Audios' %}" class="MediasALink">Audios</a></div>
+        <div class="linkMedia"><a href="{% url 'Videos' %}" class="MediasALink">Videos</a></div>
+        <div class="linkMedia"><a href="{% url 'Fotos' %}" class="MediasALink">Imagenes</a></div>
+        <div class="linkMedia"><a href="{% url 'Cartas' %}" class="MediasALink">Cartas</a></div>
+    </div>
+
+{% endblock %}

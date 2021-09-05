@@ -1,0 +1,57 @@
+{% extends 'ProyectoEspecialApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'ProyectoEspecialApp/css/juegos_css/estilos_juego1.css' %}">
+    <link rel="stylesheet" href="{% static 'ProyectoEspecialApp/css/juegos_css/juego8.css' %}">
+
+
+    <div class="gameArea1">
+        <div id="player">
+            <img src="{% static 'ProyectoEspecialApp/img/items-juegos/personaje_corazon.png' %}">
+        </div>
+        <div id="enemy1">
+            <img src="{% static 'ProyectoEspecialApp/img/items-juegos/enemigo_carita_maleada.png' %}" class="enemyImg">
+        </div>
+        <div class="plataform"></div>
+        <div class="plataform2"></div>
+
+    <div class="plataformCont">
+        <div class="plataform3"></div>
+        <div class="plataform4"></div> 
+    </div> 
+
+    <div class="enemy2">
+        <img src="{% static 'ProyectoEspecialApp/img/items-juegos/enemigo_carita_maleada.png' %}" class="enemyImg">
+    </div>
+
+    <div class="plataformCont2"> 
+        <div class="plataform5"></div>
+        <div class="plataform6"></div>        
+    </div>   
+        <div id="win">WIN</div>
+    </div>
+
+    <div class="controlsCont">
+        <div class="cont1">
+            <button class="btn btn" id="btnUp">⬆️</button>
+            <button class="btn" id="btnDown">⬇️</button>
+        </div>    
+        <div class="cont2">
+            <button class="btn btn" id="btnLeft">⬅️</button>
+            <button class="btn" id="btnRight">➡️</button>
+        </div>
+    </div>
+    
+    <li class="Links_otro_juego"><a class="linkOtroJuego" href="{% url 'Juego1' %}">El corazon volon</a></li>
+    <li class="Links_otro_juego"><a class="linkOtroJuego" href="{% url 'Juego2' %}">El corazon esquivador</a></li>
+    <li class="Links_otro_juego"><a class="linkOtroJuego" href="{% url 'Juego3' %}">Busca el corazon</a></li>
+    <li class="Links_otro_juego"><a class="linkOtroJuego" href="{% url 'Juego4' %}">Pong love</a></li>
+    <li class="Links_otro_juego"><a class="linkOtroJuego" href="{% url 'Juego5' %}">Snake💛</a></li>
+    <li class="Links_otro_juego"><a class="linkOtroJuego" href="{% url 'Juego6' %}">El corazon volon XL</a></li>
+    <li class="Links_otro_juego"><a class="linkOtroJuego" href="{% url 'Juego7' %}">Heart Adventures</a></li>   
+
+    <script src="{% static 'ProyectoEspecialApp/js/juegos/juego8.js' %}"></script>
+
+{% endblock %}

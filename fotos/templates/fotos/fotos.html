@@ -1,0 +1,29 @@
+{% extends 'ProyectoEspecialApp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'ProyectoEspecialApp/css/fotos.css' %}">
+    <link rel="stylesheet" href="{% static 'ProyectoEspecialApp/css/cartas.css' %}">
+
+    <h1 class="fotos_title">FOTOS</h1>
+    <section class="contenedorImagenes">
+            {{ foto | safe}}
+
+            {% if fotos|length|add:-1 >= max_fotos %}
+                <a href="{% url 'Mas_fotos' index %}" class="next"> >> </a>
+            {% endif %}
+        
+    </section>
+
+
+        <div class="containerLinksMoreMedia">
+            <div class="linkMedia"><a href="{% url 'Audios' %}" class="MediasALink">Audios</a></div>
+            <div class="linkMedia"><a href="{% url 'Videos' %}" class="MediasALink">Videos</a></div>
+            <div class="linkMedia"><a href="{% url 'Fotos' %}" class="MediasALink">Imagenes</a></div>
+            <div class="linkMedia"><a href="{% url 'Cartas' %}" class="MediasALink">Cartas</a></div>
+        </div>
+
+
+<script src="{% static 'ProyectoEspecialApp/js/media_apps_js/fotos.js' %}"></script>
+{% endblock %}
