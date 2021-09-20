@@ -21,7 +21,7 @@ def videos(request):
             <video controls src="{videos[i].video.url}" width="500px" class="video"height="400px">
             </video>
         </div>
-        """    
+        """   
 
     context = {
         "max_videos":max_videos,

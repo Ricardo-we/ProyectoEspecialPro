@@ -21,7 +21,7 @@ import  ProyectoEspecialApp
 from django.views.static import serve
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='Admin'),
     path('',include('ProyectoEspecialApp.urls')),
     path('cartas/', include('cartas.urls')),
     path('fotos/', include('fotos.urls')),
