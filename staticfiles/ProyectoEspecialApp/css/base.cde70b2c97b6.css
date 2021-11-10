@@ -212,3 +212,13 @@ footer{
     color: gold;
     font-size: 10vw;
 }
+
+.links-style {
+    color: red;
+    transition: 0.4s;
+}
+
+.links-style:hover {
+    background-color: rgba(255, 255, 255, 0.377);
+}
+

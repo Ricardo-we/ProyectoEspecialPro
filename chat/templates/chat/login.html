@@ -1,0 +1,26 @@
+{% extends 'ProyectoEspecialApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    #userForm {
+        margin: 10rem auto;
+    }
+    
+    .btn-especial {
+        background-color: gold;
+        color: red;
+    }
+</style>
+    <form action="{% url 'check_user' %}" class="form container-md" id="userForm" method="POST">
+        {% csrf_token %}
+        <div class="card-body">
+            <h2 class="text-center">Login Chat</h2>
+        </div>
+        <div class="card-body">        
+            <input type="text" class="form-control" placeholder="Username" name="username">
+            <input type="submit" class="form-control btn btn-especial" title="Enter" >
+        </div>
+    </form>
+{% endblock %}

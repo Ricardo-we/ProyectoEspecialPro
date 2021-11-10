@@ -1,0 +1,29 @@
+{% extends 'ProyectoEspecialApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container-md" id="messagesDisplayer" style="height: 400px; overflow-y:scroll; "></div>
+
+    <form id="messagesForm" class="form container-md mb-3" method="post">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Message" id="messageInput">
+            <div class="input-group-append">
+                <button class="btn btn-primary input-group-text" id="submitButton" style="background-color: gold; border-color: gold;">
+                    <i class="fas fa-paper-plane d-none" style="color: black;" id="send-icon"></i>
+                    <i class="fas fa-spinner fa-spin"  id="loading-icon"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        window.data = {
+            username: "{{username|safe}}",
+        }
+    </script>
+    <script src="{% static 'ProyectoEspecialApp/js/chat/chat-ajax.js' %}" type="text/javascript"></script>   
+
+{% endblock %}

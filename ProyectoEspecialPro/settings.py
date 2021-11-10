@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_7y@3p&c0k89@_+(pxpzanl1mzv*on+1n0n^hd1@u^r05&den)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'audios',
     'fotos',
     'videos',
+    'chat',
     'colorfield',
     'cloudinary_storage',
     'cloudinary'
@@ -93,7 +94,7 @@ DATABASES = {
         'USER': 'cnvovocejacjme',
         'PASSWORD': 'f465a1acc9d56cc0f02ca4c1936b341700c8767916e0daf6bcc0bd9ca42077ea',
         'HOST': 'ec2-50-17-255-244.compute-1.amazonaws.com',
-        'PORT':'5432'
+        'PORT': '5432'
     }
 }
 
@@ -135,6 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#######CAMBIAR POR staticfiles con collectstatic EN DEPLOY #######
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 django_heroku.settings(locals())
 
